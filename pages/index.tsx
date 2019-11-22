@@ -30,16 +30,16 @@ const Home = () => {
     )
       .then(res => res.json())
       .then(response => {
-        // setRestaurantList(response.data)
-        // setIsLoading(false)
+        setRestaurantList(response.data)
+        setIsLoading(false)
       })
   }
 
-  // useEffect(() => {
-  //   if (restaurantList.length > 0) {
-  //     setRestaurant(getRandomFromArray(restaurantList))
-  //   }
-  // }, [restaurantList])
+  useEffect(() => {
+    if (restaurantList.length > 0) {
+      setRestaurant(getRandomFromArray(restaurantList))
+    }
+  }, [restaurantList])
 
   return (
     <>
