@@ -45,8 +45,8 @@ export const RESTAURANT = {
       },
       {
         weekday_id: 5,
-        opens: "11:00:00",
-        closes: "19:00:00",
+        opens: null,
+        closes: null,
         open24h: false,
       },
       {

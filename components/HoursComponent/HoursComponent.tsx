@@ -15,20 +15,28 @@ const HoursComponent: React.FC<Props> = ({ openingHours }) => {
         {getIsOpen(openingHours) ? (
           <p className="status open">Open now!</p>
         ) : (
-          <p className="status close">Closed now</p>
+          <p className="status close">
+            {openingHours.openinghours_exception === ""
+              ? "Closed now"
+              : "Check exception hours"}
+          </p>
         )}
       </div>
       <div className="days">
-        {openingHours && openingHours.hours
-          ? openingHours.hours.map(hour => {
-              return (
-                <div className="daysRow" key={hour.weekday_id}>
-                  <span className="day">{WEEK_DAYS[hour.weekday_id - 1]}</span>
-                  <span>{formatHours(hour)}</span>
-                </div>
-              )
-            })
-          : "No hours information for this restaurant"}
+        {openingHours && openingHours.hours ? (
+          openingHours.hours.map(hour => {
+            return (
+              <div className="daysRow" key={hour.weekday_id}>
+                <span className="day">{WEEK_DAYS[hour.weekday_id - 1]}</span>
+                <span>{formatHours(hour)}</span>
+              </div>
+            )
+          })
+        ) : (
+          <div className="daysRow">
+            No hours information for this restaurant
+          </div>
+        )}
         <div className="daysRow special">
           {openingHours.openinghours_exception}
         </div>

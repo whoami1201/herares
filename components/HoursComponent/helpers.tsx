@@ -28,7 +28,7 @@ export const getIsOpen = (openingHours: OpeningHours): boolean => {
       hour => hour.weekday_id === moment().isoWeekday()
     )
 
-    if (!hour) {
+    if (!hour || !hour.opens) {
       return false
     }
 

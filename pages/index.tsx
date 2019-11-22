@@ -13,6 +13,9 @@ const FINNISH_FOODS = [
   "piirakka",
   "korvapuusti",
   "makkara",
+  "Karhu",
+  "Karjala",
+  "lonkero",
 ]
 
 const Home = () => {
@@ -45,6 +48,7 @@ const Home = () => {
           href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
           rel="stylesheet"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className="container">
         <h1>Helsinki Random Restaurant Generator</h1>
@@ -83,6 +87,15 @@ const Home = () => {
           }
           p {
             color: ${COLORS.SECONDARY};
+          }
+          @media (max-width: 768px) {
+            .container {
+              padding: 20px;
+            }
+            h1 {
+              font-size: 1.5em;
+              text-align: center;
+            }
           }
         `}</style>
         <style jsx global>{`

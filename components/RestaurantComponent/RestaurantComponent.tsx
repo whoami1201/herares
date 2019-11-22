@@ -31,6 +31,7 @@ const RestaurantComponent: React.FC<Props> = ({ restaurant }) => (
         padding: 40px 60px;
         margin: 40px 0;
         max-width: 900px;
+        min-width: 600px;
         overflow: hidden;
       }
       .titleWrapper {
@@ -42,8 +43,9 @@ const RestaurantComponent: React.FC<Props> = ({ restaurant }) => (
 
       @media (max-width: 768px) {
         .wrapper {
-          width: 95%;
+          width: 100%;
           padding: 30px;
+          min-width: 0;
         }
       }
     `}</style>
