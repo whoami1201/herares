@@ -3,6 +3,7 @@ import Head from "next/head"
 import { Restaurant } from "../interfaces"
 import RestaurantComponent from "../components/RestaurantComponent/RestaurantComponent"
 import { COLORS } from "../constants"
+import Loading from "../assets/loading.gif"
 
 const getRandomFromArray = (array: Array<any>): any =>
   array[Math.floor(Math.random() * array.length)]
@@ -29,16 +30,16 @@ const Home = () => {
     )
       .then(res => res.json())
       .then(response => {
-        setRestaurantList(response.data)
-        setIsLoading(false)
+        // setRestaurantList(response.data)
+        // setIsLoading(false)
       })
   }
 
-  useEffect(() => {
-    if (restaurantList.length > 0) {
-      setRestaurant(getRandomFromArray(restaurantList))
-    }
-  }, [restaurantList])
+  // useEffect(() => {
+  //   if (restaurantList.length > 0) {
+  //     setRestaurant(getRandomFromArray(restaurantList))
+  //   }
+  // }, [restaurantList])
 
   return (
     <>
@@ -66,7 +67,10 @@ const Home = () => {
         </button>
         {restaurant && <RestaurantComponent restaurant={restaurant} />}
         {isLoading && (
-          <p>{`Hold my ${getRandomFromArray(FINNISH_FOODS)}...`}</p>
+          <div className="loader">
+            <p>{`Hold my ${getRandomFromArray(FINNISH_FOODS)}...`}</p>
+            <img src={Loading} className="spinner" />
+          </div>
         )}
         <style jsx>{`
           .container {
@@ -87,6 +91,14 @@ const Home = () => {
           }
           p {
             color: ${COLORS.SECONDARY};
+          }
+          .loader {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .spinner {
+            width: 40%;
           }
           @media (max-width: 768px) {
             .container {
