@@ -8,16 +8,7 @@ import Loading from "../assets/loading.gif"
 const getRandomFromArray = (array: Array<any>): any =>
   array[Math.floor(Math.random() * array.length)]
 
-const FINNISH_FOODS = [
-  "salmiakki",
-  "leipäjuusto",
-  "piirakka",
-  "korvapuusti",
-  "makkara",
-  "Karhu",
-  "Karjala",
-  "lonkero",
-]
+const FINNISH_FOODS = ["piirakka", "makkara", "Karhu", "Karjala", "lonkero"]
 
 const Home = () => {
   const [restaurantList, setRestaurantList] = useState<Array<Restaurant>>([])

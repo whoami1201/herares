@@ -2,6 +2,8 @@
 
 If you're in Helsinki and can't decide what to eat, this might help.
 
+Check it out at https://herares.now.zsh
+
 ## Credit
 
 Thanks [MyHelsinki OPEN API](http://open-api.myhelsinki.fi/doc#/) for their amazing API and documentation!
