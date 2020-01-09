@@ -2,7 +2,7 @@
 
 If you're in Helsinki and can't decide what to eat, this might help.
 
-Check it out at https://herares.now.zsh
+Check it out at https://herares.now.sh
 
 ## Credit
 
